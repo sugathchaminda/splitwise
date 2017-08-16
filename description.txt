@@ -1,0 +1,42 @@
+Every evening set of friends goes to a bar and end of the drinks one friend will settle the bill for all. Another day another friend will pay the bill etc. After few days they will use this app (website) to split the amount they spent. They will input a json like follows.
+
+amount = total bill for the day
+paid_by = name of the user who paid the bill and this will be unique
+friends = names of the friends who came to the bar on the given day (name will appear multiple times if a friend bring another friend of him who is not in this group )
+
+
+{"data":[
+{"day":1,
+"amount":50,
+"paid_by":"tanu",
+"friends":["kasun","tanu"]
+},
+{"day":2,
+"amount":100,
+"paid_by":"kasun",
+"friends":["kasun","tanu","liam"]
+},
+{"day":3,
+"amount":100,
+"paid_by":"liam",
+"friends":["liam","tanu","liam"]
+}
+]}
+
+
+Inputs : 
+
+Either copy and paste the json in the text area of the website OR upload a .txt file that contains the json
+
+output 
+
+A page that displays:
+ Total number of days
+ Total amount spent by all friends
+ How much each friend has spent. (If I bring someone outside of the circle, then it comes under my account )
+ How much each user owes. (If there are minus values the ignore them)
+ Automatically generated a settlement combination. 
+
+Sample settlement combination
+Tanu->kasun = 100
+Liam->kasun = 20
