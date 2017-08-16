@@ -1,5 +1,5 @@
 # splitwise
-Split spent bills among the friends
+Simple pure PHP for split bills among group
 
 ## Download Repository
 git clone https://github.com/sugathchaminda/splitwise.git
