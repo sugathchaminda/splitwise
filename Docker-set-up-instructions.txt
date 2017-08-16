@@ -1,0 +1,42 @@
+
+#Install docker in ubuntu
+#create docker-compose.yml  
+
+
+#Create a public folder with a file call index.php, this is where we place our project source code
+
+#Create Linux and Nginx container
+
+#Add following to 
+your docker-compose.yml file:
+
+nginx:
+    image: tutum/nginx
+    ports:
+        - "80:80"
+    links:
+        - phpfpm
+    volumes:
+        - ./nginx/default:/etc/nginx/sites-available/default
+        - ./nginx/default:/etc/nginx/sites-enabled/default
+
+        - ./logs/nginx-error.log:/var/log/nginx/error.log
+        - ./logs/nginx-access.log:/var/log/nginx/access.log
+
+
+
+#To work PHP with nginx in  docker add the following to your docker-compose.yml file
+
+
+phpfpm:
+    image: php:fpm
+    ports:
+        - "9000:9000"
+    volumes:
+        - ./public:/usr/share/nginx/html
+
+
+#Go to the root directory of your project, and run
+
+
+docker-compose up -d
